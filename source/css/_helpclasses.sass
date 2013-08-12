@@ -1,0 +1,28 @@
+// center setter
+.center
+	margin-right: auto
+	margin-left: auto
+
+// width setter
+.container
+	width: 80%
+	max-width: 1020px
+	@extend .center
+
+@mixin transition ($params)
+	-webkit-transition: $params
+	-moz-transition: $params
+	-ms-transition: $params
+	-o-transition: $params
+	transition: $params
+
+@mixin box-sizing ($params: border-box)
+	-moz-box-sizing: $params
+	box-sizing: $params
+
+@mixin cross-browser($attr, $params)
+	-webkit-#{$attr}: $params
+	-moz-#{$attr}: $params
+	-ms-#{$attr}: $params
+	-o-#{$attr}: $params
+	#{$attr}: $params

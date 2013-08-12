@@ -1,0 +1,71 @@
+.header-holder
+	padding-top: 30px
+	padding-bottom: 30px
+
+	header
+		padding-top: 10px
+		padding-bottom: 10px
+
+		nav
+			& > ul >li:not(:first-of-type)
+				margin-left: 30px
+				
+			ul
+				height: 60px
+				font-size: 40px
+
+				li
+					&.flags
+						width: 96px
+						height: (60px + 40)
+						margin-top: -20px
+						margin-bottom: -20px
+						overflow: hidden
+						@include transition(all 500ms ease)				// fix
+
+						ul
+							width: (96*6px + 1)	// +1 for rounding
+							margin-right: -(96*5px + 50)
+							margin-top: 20px
+
+							&.transition
+								@include transition(all 500ms ease)		// fix
+
+							li
+								position: relative
+								float: left
+								width: 96px
+								height: 60px
+								display: inline-block
+								cursor: pointer
+								@include transition(all 300ms ease)		// fix
+
+						&:hover
+							width: (96*6px + 100)
+							margin-left: -(96*5px + 50)
+							margin-right: -50px
+
+							ul
+								margin-left: 50px !important
+
+								li:hover
+									$ratio: 1.2
+									width: 96px*$ratio
+									height: 60px*$ratio
+									margin-left: -96px*($ratio - 1)/2
+									margin-right: -96px*($ratio - 1)/2
+									margin-top: -60px*($ratio - 1)/2
+									margin-bottom: -60px*($ratio - 1)/2
+									box-shadow: 0 0 10px #000000
+									z-index: 100		
+
+	&.fixed
+		height: 80px // nav heaight
+
+		header
+			position: fixed
+			top: 0
+			width: 100%
+			z-index: 2
+			background-color: #eeeeee
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.5)

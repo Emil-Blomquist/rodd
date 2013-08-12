@@ -1,0 +1,47 @@
+footer
+	width: 100%
+	height: 200px
+	margin-top: -200px
+	overflow: auto
+	font-size: 18px
+
+	.rower
+		height: 100px
+		width: 60%
+		background-color: #aaaaaa
+
+		// temp
+		text-align: center
+
+	.nav-holder
+		height: 60px
+		padding-top: 40px
+		background-color: #aaaaaa
+
+		nav
+			& > ul >li:not(:first-of-type)
+				margin-left: 15px
+
+			ul
+				height: 20px
+				margin-top: 0
+				margin-bottom: 0
+				padding-left: 0
+				list-style-type: none
+				font-weight: 300
+
+				li
+					&.flags
+						float: right
+						margin-left: 0
+
+						ul
+							li
+								width: 32px
+								height: 20px
+								display: inline-block
+								margin-left: 10px
+								cursor: pointer
+
+								&:first-of-type
+									margin-left: 0
