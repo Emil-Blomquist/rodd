@@ -26,3 +26,7 @@
 	-ms-#{$attr}: $params
 	-o-#{$attr}: $params
 	#{$attr}: $params
+
+@mixin ie8-image-size($url)
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='#{$url}', sizingMethod='scale')
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='#{$url}', sizingMethod='scale')"

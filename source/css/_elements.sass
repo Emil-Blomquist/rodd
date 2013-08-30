@@ -2,19 +2,83 @@ html, body
 	// make heaght 100% available
 	height: 100%
 
+body
 	// damn finish white flag...
-	background-color: #eeeeee
+	background-color: #fff
 
 	// set font for whole site
 	font-family: 'Open Sans', sans-serif
 	font-size: 18px
 	font-weight: 300
+	line-height: 1.428
+	word-wrap: break-word
 
-a:link:not(nav a), a:visited:not(nav a)
+.bg-holder
+	content: ''
+	position: fixed
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	z-index: -1
+
+	// backround
+	background-image: url('../img/the-north-only.jpg')
+	background-repeat: no-repeat
+	background-size: 100% auto
+	background-position: 0 0
+	opacity: 0.3
+
+a:link, a:visited
 	text-decoration: none
-	// temp
-	color: #123456
+	color: #004C97
+	outline: 0
 
-a:not(nav a):hover
+	@include transition(color 300ms ease)
+
+a:hover, a:active
 	// temp
-	color: #654321
+	color: #0080FF
+	background-color: none
+
+
+
+h1, h2, h3, h4, h5
+	font-weight: 300
+	line-height: 1.428
+	margin-bottom: 0.2em
+
+	// temp
+	text-transform: capitalize
+
+h1
+	font-size: 38px
+h2
+	font-size: 32px
+h3
+	font-size: 24px
+
+table
+	max-width: 500px
+	width: 100%
+	margin-left: auto
+	margin-right: auto
+	margin-top: 30px
+	text-align: center
+
+	thead
+		font-weight: 400
+		border-bottom: 1px solid #999
+
+@media (max-width: $min-nav)
+	
+	.bg-holder
+		display: none
+		// position: absolute
+		// top: 70px !important
+
+	body
+		background-image: url('../img/the-north-only.jpg')
+		background-repeat: no-repeat
+		background-size: 100% auto
+		background-position: 0 70px

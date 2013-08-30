@@ -1,3 +1,11 @@
+header
+	nav
+		padding-left: 20px
+
+		.flags
+			.se, .dk, .fi, .no, .is
+				display: none !important
+
 nav
 	ul
 		margin-top: 0
@@ -12,15 +20,11 @@ nav
 			&.flags
 				float: right
 				margin-left: 0
-			a
+
+			a:link, a:visited
 				text-decoration: none
-				color: #444444
-			
-			&.active a, a:hover
-				color: #222222
 			
 			&.flags
-
 				li
 					position: relative
 					width: inherit

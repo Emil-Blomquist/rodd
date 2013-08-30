@@ -2,49 +2,81 @@
 title: Nordic Masters
 ---
 
+<div class="bg-holder"></div>
+
 <div class="first">
 	<div class="container">
-		<div class="text">Nordic Masters</div>
-	</div>
-	<div class="rower">
-		<br>
-		<br>
-		[bild på roddare påväg rakt från tittaren]
-		<br>
-		<br>
-		[roddaren kommer ro iväg och krympa ju mer man scrollar upp, om det blir bra, behöver en roddare först]
-		<br>
-		<br>
-		[om man inte scrollar ner själv kommer man efter kanske 3 sekunder scrollas ner automatiskt, sedan när navigerar runt på sidan kommer man aldrig mer komma till toppen utan istället visas "navbaren" högst upp]
+		<div class="nmrc">Nordic Master Rowing Championship</div>
+
+		<div class="counter">
+			<b>10</b> days left!
+		</div>
 	</div>
 </div>
 
 <div class="wrapper">
 	<div class="header-holder">
 		<header>
-			<div class="container">
-				<%= partial "nav" %>
+			<%= partial "nav" %>
+			<div class="enable-nav">
+				<div></div><div></div><div></div><div></div>
 			</div>
 		</header>
 	</div>
-	<div class="container">
-		<p>
-			<%= lorem.paragraphs 2 %>
-		</p>
-		<p>
-			<%= lorem.paragraphs 1 %>
-		</p>
+	<div class="container" id="content-holder">
+		<div class="row">
+			<div class="col-6">
+				<section class="promote">
+					<h1>Nordisk roforbund</h1>
+					<p>
+						eum est recusandae in doloremque voluptas illo architecto odio ea dolorum sequi ipsum in numquam et debitis ea et eaque
+					</p>
+					<div class="image-holder">
+						<div>
+							<img src="img/nordisk-roforbund.jpg">
+						</div>
+					</div>
+					<a href="http://www.nordicrowing.com/" target="_blank">To the website...</a>
+				</section>
+			</div>
+			<div class="col-6">
+				<section class="promote last">
+					<h1>Est Eum</h1>
+					<p>
+						dolore alias minus voluptas dolor porro rerum ab sed commodi corporis eos sit labore quae excepturi voluptas pariatur culpa incidunt
+					</p>
+					<div class="image-holder">
+						<div>
+							<img src="<%= lorem.image('300x400') %>">
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<h1><%= lorem.words 2 %></h1>
+				<p><%= lorem.paragraphs 2 %></p>
+				<p><%= lorem.paragraph %></p>
+			</div>
+		</div>
 	</div>
 </div>
 <footer>
 	<div class="rower center">
+		<!--<br>
 		<br>
-		<br>
-		[bild på roddare som ror rakt åt antingen höger eller vänster]
+		[bild på roddare som ror rakt åt antingen höger eller vänster]-->
 	</div>
 	<div class="nav-holder">
 		<div class="container">
-			<%= partial "nav" %>
+			<div class="flags">
+				<div class="se"></div>
+				<div class="dk"></div>
+				<div class="fi"></div>
+				<div class="no"></div>
+				<div class="is"></div>
+			</div>
 		</div>
 	</div>
 </footer>

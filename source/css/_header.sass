@@ -1,31 +1,56 @@
 .header-holder
-	padding-top: 30px
+	padding-top: 10px
 	padding-bottom: 30px
 
 	header
 		padding-top: 10px
 		padding-bottom: 10px
 
+		@media (min-width: $min-nav)
+			.enable-nav
+				display: none
+
+		@include transition(background 300ms ease)		
+
 		nav
-			& > ul >li:not(:first-of-type)
+
+			& > ul > li
 				margin-left: 30px
+
+			& > ul > li:first-of-type
+				margin-left: 0
 				
 			ul
 				height: 60px
-				font-size: 40px
+				font-size: 20px
 
 				li
+					display: inline-block
+					padding-top: 17px
+					@include box-sizing
+
+
+					a:link, a:visited
+						text-decoration: none
+						color: #666666
+
+					&.active a, a:hover
+						color: #222222
+						border-bottom: 1px solid #222
+
 					&.flags
 						width: 96px
 						height: (60px + 40)
 						margin-top: -20px
 						margin-bottom: -20px
+						margin-right: 20px
+						padding-top: 0
 						overflow: hidden
 						@include transition(all 500ms ease)				// fix
 
 						ul
-							width: (96*6px + 1)	// +1 for rounding
-							margin-right: -(96*5px + 50)
+							width: (96*3px + 50)	// +1 for rounding
+							margin-right: -(96*2px + 50)
 							margin-top: 20px
 
 							&.transition
@@ -41,9 +66,9 @@
 								@include transition(all 300ms ease)		// fix
 
 						&:hover
-							width: (96*6px + 100)
-							margin-left: -(96*5px + 50)
-							margin-right: -50px
+							width: (96*3px + 70)
+							margin-left: -(96*2px + 50)
+							margin-right: 0
 
 							ul
 								margin-left: 50px !important
@@ -67,5 +92,137 @@
 			top: 0
 			width: 100%
 			z-index: 2
-			background-color: #eeeeee
+			background-color: rgb(255, 255, 255)
+			background-color: rgba(255, 255, 255, 0.9)
 			box-shadow: 0 0 5px rgba(0, 0, 0, 0.5)
+
+
+@media (max-width: $min-nav)
+
+	.header-holder
+		height: 0
+
+		&.fixed
+			height: 0
+
+		header
+			position: fixed
+			top: 0
+			width: 100%
+			height: 50px
+			z-index: 2
+			background-color: rgba(255, 255, 255, 0.9)
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.5)
+
+			padding-top: 0
+			padding-bottom: 0
+			
+			overflow: hidden
+			@include transition(height 300ms ease)
+
+			&.active
+				&.scroll
+					max-height: 100% !important
+					overflow: auto
+					-webkit-overflow-scrolling: touch
+
+				// @include box-sizing
+
+				nav
+					display: block
+
+				.enable-nav
+					div
+						background-color: #dddddd
+
+			.enable-nav
+				position: absolute
+				top: 11px
+				right: 10px
+				width: 40px
+				height: 28px
+				cursor: pointer
+
+				div
+					height: 4px
+					border-radius: 3px
+					background-color: #aaaaaa
+					margin-bottom: 4px
+					
+					@include transition(background-color 300ms ease)
+
+				&.active div, &:hover div
+					background-color: #dddddd
+
+			nav
+				display: none
+				padding-top: 10px
+				padding-bottom: 10px
+
+				ul
+					height: auto
+					margin-left: 0 !important
+					font-size: 18px
+
+					& li
+						display: block
+						padding-top: 10px
+						margin-left: 10px !important
+
+						&.flags
+							float: none
+							margin-top: 30px
+							margin-left: 0 !important
+
+							width: auto
+							height: auto
+							margin-bottom: 0
+							margin-right: 0
+							padding-top: 0
+							overflow: visible
+							@include transition(none)
+
+
+							ul
+								text-align: center
+								width: auto
+								margin-right: 0
+								margin-top: 0
+
+								li
+									float: none
+									width: 64px
+									height: 40px
+									margin-left: 20 !important
+									display: inline-block
+									cursor: pointer
+									@include transition(none)
+
+									&:first-of-type
+										margin-left: 0 !important
+
+									&.active
+										box-shadow: 0 0 10px #000000
+
+
+
+							&:hover
+								width: auto
+								margin-left: 0
+								margin-right: 0
+
+								ul
+									margin-left: 0 !important
+
+									li:hover
+										float: none
+										width: 64px
+										height: 40px
+										margin: 0
+										margin-left: 20 !important
+										display: inline-block
+										cursor: pointer
+										@include transition(none)
+
+										&:first-of-type
+											margin-left: 0 !important 

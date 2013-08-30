@@ -8,7 +8,7 @@ footer
 	.rower
 		height: 100px
 		width: 60%
-		background-color: #aaaaaa
+		// background-color: #aaaaaa
 
 		// temp
 		text-align: center
@@ -18,30 +18,51 @@ footer
 		padding-top: 40px
 		background-color: #aaaaaa
 
-		nav
-			& > ul >li:not(:first-of-type)
-				margin-left: 15px
+	.flags
+		text-align: center
 
-			ul
-				height: 20px
-				margin-top: 0
-				margin-bottom: 0
-				padding-left: 0
-				list-style-type: none
-				font-weight: 300
+		div
+			position: relative 
+			width: 32px
+			height: 20px
+			display: inline-block
+			margin-left: 10px
+			cursor: pointer
 
-				li
-					&.flags
-						float: right
-						margin-left: 0
+			&:first-of-type
+				margin-left: 0
 
-						ul
-							li
-								width: 32px
-								height: 20px
-								display: inline-block
-								margin-left: 10px
-								cursor: pointer
+		// nav
+		// 	& > ul >li:not(:first-of-type)
+		// 		margin-left: 15px
 
-								&:first-of-type
-									margin-left: 0
+		// 	ul
+		// 		height: 20px
+		// 		margin-top: 0
+		// 		margin-bottom: 0
+		// 		padding-left: 0
+		// 		list-style-type: none
+		// 		font-weight: 300
+
+		// 		li
+		// 			display: none
+
+		// 			&.flags
+		// 				display: inline
+		// 				// float: right
+		// 				margin-left: auto
+		// 				margin-right: auto
+
+		// 				.uk, .de, .es
+		// 					display: none
+
+		// 				ul
+		// 					li
+		// 						width: 32px
+		// 						height: 20px
+		// 						display: inline-block
+		// 						margin-left: 10px
+		// 						cursor: pointer
+
+		// 						&:first-of-type
+		// 							margin-left: 0
